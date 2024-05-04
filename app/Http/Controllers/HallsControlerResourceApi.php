@@ -39,7 +39,7 @@ class HallsControlerResourceApi extends Controller
         if($request->hasFile('images')){
             foreach ($request->file('images') as $image){
                 $photo = $this->upload($image,'halls');
-                ImageModalSave::make($hall->id,'halls',$photo);
+                ImageModalSave::make($hall->id,'halls','halls/'.$photo);
             }
         }
         DB::commit();
