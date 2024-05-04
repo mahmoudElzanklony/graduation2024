@@ -17,6 +17,7 @@ class HallResource extends JsonResource
         return [
           'id'=>$this->id,
           'city'=>CityResource::make($this->whenLoaded('city')),
+          'images'=>ImageResource::collection($this->whenLoaded('images')),
           'name'=>$this->name,
           'info'=>$this->info,
           'address'=>$this->address,
