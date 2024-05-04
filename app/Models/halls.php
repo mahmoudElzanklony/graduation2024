@@ -19,4 +19,9 @@ class halls extends Model
     {
         return $this->belongsTo(cities::class,'city_id');
     }
+
+    public function images()
+    {
+        return $this->morphMany(images::class,'imageable');
+    }
 }

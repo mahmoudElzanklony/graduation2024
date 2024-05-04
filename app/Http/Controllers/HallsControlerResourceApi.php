@@ -21,7 +21,7 @@ class HallsControlerResourceApi extends Controller
     public function index()
     {
         //
-        $data = halls::query()->with('city')->orderBy('id','DESC')->get();
+        $data = halls::query()->with('city')->with('images')->orderBy('id','DESC')->get();
         return HallResource::collection($data);
     }
 
