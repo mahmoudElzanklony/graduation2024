@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\HallsControlerResourceApi;
 use App\Http\Controllers\SupportControllerResource;
 /*
@@ -29,3 +30,4 @@ Route::group(['prefix'=>'/auth'],function (){
 
 Route::resource('halls',HallsControlerResourceApi::class);
 Route::resource('support',SupportControllerResource::class);
+Route::get('/users',[UsersController::class,'index']);
